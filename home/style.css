@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+html,
+* {
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(90deg, #bfbfbf, #95c9aa, #86bb8a);
+    font-family: 'Cal Sans', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 90px;
+    padding: 0 40px;
+
+    .menu-items {
+        display: flex;
+        gap: 30px;
+
+        a {
+            position: relative;
+            color: #1b4332;
+            font-size: 30px;
+            text-decoration: none !important;
+            transition: transform 0.3s ease;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -5px;
+                width: 0;
+                height: 2px;
+                background-color: #1b4332;
+                transition: width 0.3s ease;
+            }
+
+            &:hover {
+                transform: translateY(-4px);
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 60px;
+    min-height: calc(100vh - 90px);
+
+    .card {
+        background-color: #d8f3dc;
+        border-radius: 16px;
+        padding: 30px;
+        max-width: 800px;
+        width: 100%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        h2.title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1b4332;
+        }
+
+        img {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 22px;
+            color: #081c15;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+    }
+}
