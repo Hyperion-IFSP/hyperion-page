@@ -49,3 +49,50 @@ body {
         }
     }
 }
+
+.team {
+    height: calc(100vh - 90px);
+    display: flex;
+    padding: 0 60px;
+    flex-direction: column;
+    gap: 30px;
+
+    h2.title {
+        text-align: center;
+        font-size: 35px;
+        color: #1b4332;
+    }
+
+    .members {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 20px;
+
+        .member {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            img {
+                width: 250px;
+                height: 250px;
+                border-radius: 50%;
+                margin-bottom: 20px;
+                transition: ease 0.3s;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            h3 {
+                font-size: 25px;
+            }
+
+            h4 {
+                font-size: 20px;
+            }
+        }
+    }
+}
