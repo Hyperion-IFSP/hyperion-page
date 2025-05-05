@@ -49,3 +49,42 @@ body {
         }
     }
 }
+.title{
+    color: #1b4332;
+}
+.text {
+    width: 50vw;
+    font-size:larger;
+    color: #1b4332;
+}
+.botao 
+{   display: flex;
+    background: linear-gradient(90deg, #bfbfbf, #95c9aa, #86bb8a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.botao:hover {
+    transition: 300ms;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+.gitlogo {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+a {
+    
+
+    list-style: none;
+    color: black;
+    text-decoration: none;
+}
+.all-container {
+    margin: 3%;
+}
