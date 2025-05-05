@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecionando...</title>
+    <script>
+        function redirecionar() {
+            // Defina o URL para o qual você deseja redirecionar
+            var urlDestino = "./home/index.html"; // Substitua pelo URL desejado
+
+            // Redireciona o usuário para o novo URL
+            window.location.href = urlDestino;
+        }
+
+        // Chama a função de redirecionamento assim que a página carrega
+        window.onload = redirecionar;
+
+        // Opcional: Defina um tempo limite para o redirecionamento (em milissegundos)
+        setTimeout(redirecionar, 5000); // Redireciona após 5 segundos
+    </script>
+</head>
+<body>
+    <p>Você será redirecionado em breve...</p>
+    </body>
+</html>
