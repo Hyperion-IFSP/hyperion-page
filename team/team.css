@@ -1,5 +1,4 @@
 .team {
-    height: calc(100vh - 90px);
     display: flex;
     padding: 0 60px;
     flex-direction: column;

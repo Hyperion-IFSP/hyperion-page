@@ -2,20 +2,54 @@
 
 html,
 * {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
-body {
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+html {
     background: linear-gradient(90deg, #bfbfbf, #95c9aa, #86bb8a);
     font-family: 'Cal Sans', sans-serif;
+
+    overflow-x: hidden;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #1b4332;
+}
+
+h1 {
+    font-size: 50px;
+    color: #1b4332;
+    text-align: center;
+    font-weight: bolder;
 }
 
 .navbar {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     height: 90px;
     padding: 0 40px;
+
+    position: sticky;
 
     .menu-items {
         display: flex;
@@ -47,5 +81,85 @@ body {
                 }
             }
         }
+    }
+
+    .menu-items-mobile {
+        display: none;
+    }
+
+    button.mobile-menu {
+        display: none;
+    }
+}
+
+@supports (animation-timeline: scroll()) {
+    .navbar {
+        /* Define a animação */
+        animation: scroll 0.75s ease-in-out both;
+
+        /* A animação irá ocorrer com base no scroll do mouse */
+        animation-timeline: scroll();
+
+        /* define o minimo/maximo da animação, ou seja, ela estará completa ao 10dvh */
+        animation-range: 0dvh 10dvh;
+    }
+}
+
+@keyframes scroll {
+    /* FIXME: tem algum problema de estilo na home em que a página trava quando vc rola pra baixo, vo deixar isso quieto por enquanto... */
+    /* to {
+        background-color: #bfbfbf;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    } */
+}
+
+@media (max-width: 1366px) {
+    .navbar {
+        .menu-items {
+            display: none;
+        }
+
+        .menu-items-mobile {
+            padding-inline: 1rem;
+
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+
+            width: 50dvw;
+            height: 100dvh;
+
+            border-left: #1b4332 2px solid;
+
+            font-size: 1.625rem;
+
+            top: 0;
+            bottom: 0;
+            right: 0;
+            position: fixed;
+            z-index: 2;
+
+            background: linear-gradient(90deg, #bfbfbf, #95c9aa, #86bb8a);
+
+            * {
+                margin: 1.125rem;
+            }
+        }
+
+        button.mobile-menu {
+            display: unset;
+            z-index: 1;
+
+            border: none;
+            background: transparent;
+            color: #1b4332;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+    }
+
+    body {
+        font-size: 14px !important;
     }
 }
